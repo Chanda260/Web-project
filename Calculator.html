@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+<style>
+  body{
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 20%);
+  background-color: rgb(51, 51, 51);
+  }
+  section{
+  text-align: center;
+  padding: 35px 30px;
+  margin: 1px auto;
+  max-width: 500px;
+  background: hsl(0, 0%, 87%);
+  border-radius: 8px;
+  } 
+  h1{
+    font-weight: bolder;
+    font-family: calibri;
+    font-size: 20px;
+  }
+  button{
+    font-weight: bolder;
+  }
+</style>
+</head>
+<body>
+<BR><BR>
+    <section>
+      <h1>CALCULATOR</h1>
+      Enter the First Number:
+      <input id="first">
+      <br><br>
+      Enter the Second Number:
+      <input id="second">
+      <p id="result" style="font-weight: bolder; color: red;"></p>
+      Select your Option:
+      <select id="operator">
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="mul">Multiplication</option>
+        <option value="div">Division</option>
+        <option value="sqrt">Square Root</option>
+      </select> 
+      <button onclick="add()" >Evaluate</button>
+      <button onclick="reset()">Reset</button> 
+      
+
+    </section>
+
+    <script>
+
+    onload = alert("WELCOME TO CHANDA'S BASIC MINI CALCULATOR!")
+
+     function add(){
+      var a,b,c,d,operator;
+      a = document.getElementById("first").value;
+      b = document.getElementById("second").value;
+      d = document.getElementById("result");
+      
+      operator = document.getElementById("operator").value;
+      if(isNaN(a) || isNaN(b)){
+        d.innerHTML = "Please Enter Numbers";
+      }
+      else if(document.getElementById("first").value == "" && document.getElementById("second").value == ""){
+        d.innerHTML = "Cant evaluate plain text!";
+      }
+      else if(operator === "add"){
+        c = Number(a) + Number(b);
+        d.innerHTML = "The result is "+ c;
+      }
+      else if(operator === "sub"){
+        c = Number(a) - Number(b);
+        d.innerHTML = "The result is "+ c;
+      }
+      else if(operator === "mul"){
+        c = Number(a) * Number(b);
+        d.innerHTML = "The result is "+ c;
+      }
+      else if(operator === "div"){
+        c = Number(a) / Number(b);
+        d.innerHTML = "The result is "+ c;
+      }
+      else if(operator === "sqrt"){
+        c = Number(a) * Number(a)
+        d.innerHTML = "The result is "+ c;
+      }
+     }
+     
+     function reset(){
+      document.getElementById("first").value = "";
+      document.getElementById("second").value = "";
+      document.getElementById("result").innerHTML = "";
+     }
+
+    </script>
+
+</body>
+</html>
