@@ -28,6 +28,42 @@
   }
   button{
     font-weight: bolder;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px;
+  }
+  #evaluate:active{
+    background-color:rgb(41, 197, 236);
+    transition: 0.1ms;
+  }
+  button:hover{
+    background-color: rgb(189, 192, 192);
+  }
+  input{
+    border-radius: 6px;
+    /*box-shadow: 2px 4px 6px rgb(104, 103, 103);*/
+    border-color: black 1px;
+  }
+  input:hover{
+    background-color: rgb(189, 192, 192);
+  }
+  input:focus{
+    border: 3px solid red;
+
+  }
+  #reset:active{
+    background-color: rgb(255, 31, 31);
+    transition: 0.1ms;
+  }
+  #result{
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  [id="option"]{
+   text-transform: uppercase;
+   font-weight: bold;
+    
   }
 </style>
 </head>
@@ -35,29 +71,28 @@
 <BR><BR>
     <section>
       <h1>CALCULATOR</h1>
-      Enter the First Number:
+      <b>Enter The First Number :</b>
       <input id="first">
       <br><br>
-      Enter the Second Number:
-      <input id="second">
-      <p id="result" style="font-weight: bolder; color: red;"></p>
-      Select your Option:
+      <b>Enter The Second Number :</b>
+      <input id="second"><br><br>
+      <b>Select your Option :</b>
       <select id="operator">
-        <option value="add">Addition</option>
-        <option value="sub">Subtraction</option>
-        <option value="mul">Multiplication</option>
-        <option value="div">Division</option>
-        <option value="sqrt">Square Root</option>
-      </select> 
-      <button onclick="add()" >Evaluate</button>
-      <button onclick="reset()">Reset</button> 
-      
-
+        <option id="option" value="add">Addition</option>
+        <option id="option" value="sub">Subtraction</option>
+        <option id="option" value="mul">Multiplication</option>
+        <option id="option" value="div">Division</option>
+        <option id="option" value="sqrt">Square Root</option>
+      </select>
+      <button id="evaluate" onclick="add()" >Evaluate</button>
+      <button id="reset" onclick="reset()">Reset</button><br> 
+      <br><p id="result" style="font-weight: bolder; color: red;"></p>
     </section>
+    
 
     <script>
 
-    onload = alert("WELCOME TO CHANDA'S BASIC MINI CALCULATOR!")
+    //onload = alert("WELCOME TO CHANDA'S BASIC MINI CALCULATOR!")
 
      function add(){
       var a,b,c,d,operator;
@@ -70,27 +105,32 @@
         d.innerHTML = "Please Enter Numbers";
       }
       else if(document.getElementById("first").value == "" && document.getElementById("second").value == ""){
-        d.innerHTML = "Cant evaluate plain text!";
+        alert("Please Input Your First And Second Number For Evaluation!!");
       }
       else if(operator === "add"){
         c = Number(a) + Number(b);
         d.innerHTML = "The result is "+ c;
+        d.style.borderBottomStyle = "groove";
       }
       else if(operator === "sub"){
         c = Number(a) - Number(b);
         d.innerHTML = "The result is "+ c;
+        d.style.borderBottomStyle = "groove";
       }
       else if(operator === "mul"){
         c = Number(a) * Number(b);
         d.innerHTML = "The result is "+ c;
+        d.style.borderBottomStyle = "groove";
       }
       else if(operator === "div"){
         c = Number(a) / Number(b);
         d.innerHTML = "The result is "+ c;
+        d.style.borderBottomStyle = "groove";
       }
       else if(operator === "sqrt"){
         c = Number(a) * Number(a)
         d.innerHTML = "The result is "+ c;
+        d.style.borderBottomStyle = "groove";
       }
      }
      
@@ -98,6 +138,7 @@
       document.getElementById("first").value = "";
       document.getElementById("second").value = "";
       document.getElementById("result").innerHTML = "";
+      document.getElementById("result").style.borderBottomStyle = "none";
      }
 
     </script>
