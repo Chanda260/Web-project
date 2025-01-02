@@ -60,4 +60,5 @@ body{
   #result{
    font-weight: bolder;
    color: red; 
+   transition: display 2s linear;
   }
