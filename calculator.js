@@ -1,12 +1,13 @@
 
 onload = alert("WELCOME TO CHANDA'S BASIC MINI CALCULATOR!")
 
-function add(){
+ add = () => {
 
  var a,b,c,d,operator;
  a = document.getElementById("first").value;
  b = document.getElementById("second").value;
  d = document.getElementById("result");
+ 
  
  operator = document.getElementById("operator").value;
 
@@ -49,9 +50,14 @@ function add(){
  }
 }
 
-function reset(){
+ reset = () => {
  document.getElementById("first").value = "";
  document.getElementById("second").value = "";
  document.getElementById("result").innerHTML = "";
  document.getElementById("result").style.borderBottomStyle = "none";
+ document.getElementById("operator").value  = "";
+
 }
+
+
+

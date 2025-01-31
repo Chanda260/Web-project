@@ -55,10 +55,8 @@ body{
   [id="option"]{
    text-transform: uppercase;
    font-weight: bold;
-    
   }
   #result{
-   font-weight: bolder;
-   color: red; 
-   transition: display 2s linear;
-  }
+    font-weight: bolder;
+    color: red; 
+   }
